@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Ubuntu:400,500');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300');
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Ubuntu', sans-serif;
+}
+#container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: #de732d;
+    overflow: hidden;
+    transition: 1s;
+}
+.card{
+    position: absolute;
+    left: 50%;
+    top: 100px;
+    transform: translateX(-50%);
+    width: 300px;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0px 6px 15px #333;
+    padding: 20px;
+}
+.image {
+    width: 150px;
+    height: 150px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: 20px auto;
+}
+h2 {
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 0;
+    user-select: none;
+}
+p {
+    margin-top: 0;
+    font-weight: 400;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.64);
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 100px;
+    user-select: none;
+}
+a {
+    color:red;
+}
+.confirm{
+    bottom: 50px !important;
+    right: 40px !important;
+    font-weight: bold !important;
+    cursor: pointer !important;
+    color: #7c4019 !important;
+}
+.card_1 p{
+    margin-bottom: 6px !important;
+}
+.card_1 .answer{
+    text-align: center;
+}
+.next {
+    position: absolute;
+    bottom: 50px;
+    right: 40px;
+    font-weight: 500;
+    cursor: pointer;
+}
+.prev {
+    position: absolute;
+    bottom: 50px;
+    left: 40px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+/* CARD 1 */
+.card_1 {
+    background: #f6f6f6;
+    transition: 1s;
+}
+.card_1 .image{
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/5/58/AVL%28-25%29.png?20160313134708");
+}
+.card_1 h2 {
+    color: #ac5422;
+}
+.card_1 .next{
+    color: #ac5422;
+}
+.card_1 .prev{
+    color: #ac5422;
+}
+/* CARD 2 */
+.card_2 {
+    background: #f6f6f6;
+    transform: translateX(-50%) scale(2);
+    margin: 1200px;
+    opacity: 0;
+    transition: 1.4s;
+}
+.card_2 .image{
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/5/58/AVL%28-25%29.png?20160313134708");
+    width: 200px;
+    height: 175px;
+}
+.card_2 h2{
+    color: #7c4019
+}
+.card_2 .next{
+    color: #7c4019;
+}
+.card_2 .prev{
+    color: #7c4019;
+}
+.card_2.active{
+    opacity: 1;
+    margin: 0;
+    transform: translateX(-50%) scale(1) ;
+}
+
+
+/* CARD 3 */
+.card_3 {
+    background: #f6f6f6;
+    transform: translateX(-50%) scale(2);
+    margin: -1200px;
+    transition: 1.4s;
+}
+.card_3 .image {
+    
+    width: auto;
+    height: auto;
+    background-position: center;
+}
+.card_3 h2{
+    color: #8b8b8b
+}
+.card_3 .next{
+    color: #8b8b8b;
+}
+.card_3 .prev{
+    color: #8b8b8b;
+}
+.card_3.active{
+    margin: 0;
+    transform: translateX(-50%) scale(1) ;
+}
+
+/* CARD 4 */
+.card_4 {
+    background: #f6f6f6;
+    transform: translateX(-50%) scale(2);
+    margin: -1200px 1000px;
+    transition: 1.4s;
+}
+.card_4 .image {
+    margin-bottom: 0;
+    background-position: center;
+}
+.card_4 h2{
+    color: #e8672e
+}
+.card_4 .next{
+    color: #e8672e;
+}
+.card_4 .prev{
+    color: #e8672e;
+}
+.card_4.active{
+    margin: 0;
+    transform: translateX(-50%) scale(1) ;
+}
+
+</style>
+<body>
+    <div id="container">
+        <div class="container_boxes">
+            <!-- Card 1 -->
+            <div class="card card_1" id="card1">
+                <div class="image"></div>
+                <h2>암호를 입력하세요</h2>
+                <p>"내게 (   ) 자 안에서 내가 모든 것을 할 수 있느니라"</p>
+                <div class="answer"><input id="answerIn" style="text-align:center;" type="text" onkeyup="if(window.event.keyCode==13){QnAnswer()}"><div class="confirm" onclick="QnAnswer()">확인</div></div>
+                
+            </div>
+
+            <!-- Card 2 -->
+            <div class="card card_2" id="card2">
+                <div class="image"></div>
+                <h2>이 화면을 캡처하세요</h2>
+                <p> *주의 : 'next'를 눌러 미션을 확인하기 전에 이 화면을 캡처하세요. 
+                    부스에서 해당 화면을 보여주어야 확인 혹은 미션수행이 가능합니다.
+                </p>
+                <div class="prev" onclick="prev()">PREV</div>
+                <div class="next" onclick="next()">NEXT</div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="card card_3" id="card3">
+                <div class="image"></div>
+                <h2>절대 음감</h2>
+                <p>대표자 5명을 뽑고 뽑기종이를 랜덤으로 뽑아 나온 제시어를 틀리지 않고 이어서 5명이 성공할 경우 성공! <br>                    
+
+                    <br><br><a>통과조건: 제한시간 30초안에 해야하고 중간에 틀리면 첫번째 사람부터 다시시작!</a>
+                    <br><a>**'사회적' 게임 부스에서 진행되는 게임입니다. 부스를 찾아가세요!</a>
+                </p>
+                    
+                <div class="prev" onclick="prev()">PREV</div>
+                <div class="next" onclick="next()">NEXT</div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="card card_4" id="card4">
+                <h2>확인 받으러 가자!</h2>
+                <p>미션을 완료하시고 해당 부스로 가서 확인받으세요!
+                    <br>
+                    <br>빙고를 완성하면 <br> 상품 뽑기도 할 수 있답니다!!!
+                </p>
+                <div class="prev" onclick="prev()">PREV</div>
+            </div>
+
+        </div>
+    </div> 
+</body>
+<script>
+     let card1 = document.getElementById("card1"),
+            card2 = document.getElementById("card2"),
+            card3 = document.getElementById("card3"),
+            card4 = document.getElementById("card4"),
+            card_length = document.querySelectorAll(".card");
+
+        // container
+        let container = document.getElementById("container");
+
+        // Card List
+        let card_list = [card1, card2, card3, card4];
+
+        var AnswerInput = document.querySelector('#answerIn');
+
+        // next function
+        let counter = 1;
+        function next() {
+            console.log("next:" + counter)
+            if (counter < card_length.length) {
+                card_list[counter].classList.add("active");
+                backgroundFunc(counter);
+                counter += 1;
+            }
+            else {
+                counter = card_length.length;
+            }
+        }
+
+        function prev() {
+            if (counter > 1) {
+                card_list[counter - 1].classList.remove("active");
+                counter -= 1;
+            }
+            else {
+                counter = 1;
+            }
+            backgroundFunc(counter-1);
+            console.log("prev:" + counter)
+        }
+        
+        // background function
+        function backgroundFunc(x) {
+            if (x == 0) {
+                container.style.background = "#de732d";
+            }
+            else if (x == 1) {
+                container.style.background = "#7c4019";
+            }
+            else if (x == 2) {
+                container.style.background = "#8b8b8b";
+            }
+            else if (x == 3) {
+                container.style.background = "#e8672e"
+            }
+        }
+
+        var password = "능력주시는";
+        function QnAnswer(){
+            
+            if(AnswerInput.value == password){
+                next();
+            }else{
+                var wrongResult = "정답이 아닙니다ㅠㅠㅠ\n **띄어쓰기는 없습니다**";
+                alert(wrongResult);
+            }
+
+        }
+</script>
+</html>
