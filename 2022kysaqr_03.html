@@ -94,7 +94,7 @@ a {
     transition: 1s;
 }
 .card_1 .image{
-    background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Eo_circle_orange_number-7.svg/512px-Eo_circle_orange_number-7.svg.png?20200417161754");
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Eo_circle_orange_number-3.svg/512px-Eo_circle_orange_number-3.svg.png?20200417161714");
 }
 .card_1 h2 {
     color: #ac5422;
@@ -114,7 +114,7 @@ a {
     transition: 1.4s;
 }
 .card_2 .image{
-    background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Eo_circle_orange_number-7.svg/512px-Eo_circle_orange_number-7.svg.png?20200417161754");
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Eo_circle_orange_number-3.svg/512px-Eo_circle_orange_number-3.svg.png?20200417161714");
     width: 200px;
     height: 175px;
 }
@@ -142,9 +142,9 @@ a {
     transition: 1.4s;
 }
 .card_3 .image {
-    background-image: url("https://us.123rf.com/450wm/vectorshowstudio/vectorshowstudio1706/vectorshowstudio170600622/80872517-%EC%8B%A0%EB%AC%B8-%EC%9E%A1%EC%A7%80-%EA%B8%80%EA%BC%B4%EB%A1%9C-%EB%A7%8C%EB%93%A0-%EB%8B%A4%EC%B1%84%EB%A1%9C%EC%9A%B4-%EB%B2%A1%ED%84%B0-%EC%95%8C%ED%8C%8C%EB%B2%B3-%EA%B8%80%EC%9E%90-abc-%EC%A2%85%EC%9D%B4-%ED%85%8D%EC%8A%A4%ED%8A%B8-%EC%BD%9C%EB%9D%BC%EC%A3%BC-%EC%BB%B7-%ED%83%80%EC%9D%B4%ED%8F%AC%EA%B7%B8%EB%9E%98%ED%94%BC-%EC%B0%B8%EA%B3%A0-%EA%B7%B8%EB%A6%BC.jpg");
+    
     width: auto;
-    height: 150px;
+    height: auto;
     background-position: center;
 }
 .card_3 h2{
@@ -194,7 +194,7 @@ a {
             <div class="card card_1" id="card1">
                 <div class="image"></div>
                 <h2>암호를 입력하세요</h2>
-                <p>"그리고 만일 너희가 이 백성에게 회개를 외쳐 너희 온 생애 동안 수고하여 단 한 ​​​(     )내게로 데려오면, 나의 아버지의 왕국에서 그와 함께 누리게 될 너희의 기쁨이 얼마나 크겠느냐!"</p>
+                <p>"또 모든 일이 지혜와 질서 안에서 행해지도록 할지니, 이는 사람이 그가 가진 힘보다 더 빨리 달음질함이 요구되지 아니함이라. 그리고 또 그는 부지런할 필요가 있나니, 그로써 그가 상을 얻으리라. 그러므로 모든 일은 반드시 (       ) 안에서 행해져야 하느니라"</p>
                 <div class="answer"><input id="answerIn" style="text-align:center;" type="text" onkeyup="if(window.event.keyCode==13){QnAnswer()}"><div class="confirm" onclick="QnAnswer()">확인</div></div>
                 
             </div>
@@ -213,15 +213,16 @@ a {
             <!-- Card 3 -->
             <div class="card card_3" id="card3">
                 <div class="image"></div>
-                <h2>조 이름 정하기  & 조 이름 글자 찾아서 완성하고 사진 보여주기</h2>
-                <p>준비물: 핸드폰 카메라
-                    <br>
+                <h2>질서있게 배열하기</h2>
+                <p><a>질문의 답이 작은 순에서 큰 순이 되도록 질문을 배열하세요. </a><br>      
+                    - 질문 1. 요나가 물고기 배 속에 있었던 날의 수 
+                    <br>- 질문 2. 다윗이 가져온 매끄러운 돌의 수
+                    <br>- 질문 3. 요시야가 왕이 되었던 나이의 절반
+                    <br>- 질문 4. 십계명이 기록된 돌판 수
+                    <br>- 질문 5. 나아만이 요단강에서 몸을 씻어야 했던 횟수
 
-                    조 이름을 정하고 대회장 곳곳에 한 글자씩 찾아서 조이름을 완성하면 성공! (5글자 이상으로 정하기)
-                    <br><br><a>통과조건: 꼭 한글자씩 찾기</a>
-                    <br><a>한번에 찍을 수 있는 조 이름은 실패 ex) 오션투유리조트</a>
+                    <br><br><a>통과 조건: 순서대로 나열하여 확인받으면 통과!</a>
                 </p>
-
                     
                 <div class="prev" onclick="prev()">PREV</div>
                 <div class="next" onclick="next()">NEXT</div>
@@ -297,7 +298,7 @@ a {
             }
         }
 
-        var password = "영혼이라도";
+        var password = "질서";
         function QnAnswer(){
             
             if(AnswerInput.value == password){
