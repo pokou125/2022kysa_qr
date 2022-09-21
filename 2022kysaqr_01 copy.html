@@ -94,7 +94,7 @@ a {
     transition: 1s;
 }
 .card_1 .image{
-    background-image: url("https://upload.wikimedia.org/wikipedia/commons/e/ec/AVL%28-12%29.png?20160313134651");
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Eo_circle_orange_number-1.svg/512px-Eo_circle_orange_number-1.svg.png?20200417161654");
 }
 .card_1 h2 {
     color: #ac5422;
@@ -114,7 +114,7 @@ a {
     transition: 1.4s;
 }
 .card_2 .image{
-    background-image: url("https://upload.wikimedia.org/wikipedia/commons/e/ec/AVL%28-12%29.png?20160313134651");
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/d/d2/AVL%28-26%29.png?20160313134709");
     width: 200px;
     height: 175px;
 }
@@ -142,9 +142,9 @@ a {
     transition: 1.4s;
 }
 .card_3 .image {
-    background-image: url("https://github.com/pokou125/2022kysa_qr/blob/main/KakaoTalk_20220920_003859249_04.jpg?raw=true");
+    
     width: auto;
-    height: 180px;
+    height: auto;
     background-position: center;
 }
 .card_3 h2{
@@ -194,7 +194,7 @@ a {
             <div class="card card_1" id="card1">
                 <div class="image"></div>
                 <h2>암호를 입력하세요</h2>
-                <p>"또 그 영의 일부가 내 안에 거하사, 하나님께 있는 나의 신앙과 소망을 따라 내게 (       )과 또한 힘을 주시나이다."</p>
+                <p>"하나님이 지으신 그 모든 것을 보시니 보시기에 심히 (      ) 저녁이 되고 아침이 되니 이는 여섯째 날이니라"</p>
                 <div class="answer"><input id="answerIn" style="text-align:center;" type="text" onkeyup="if(window.event.keyCode==13){QnAnswer()}"><div class="confirm" onclick="QnAnswer()">확인</div></div>
                 
             </div>
@@ -213,15 +213,12 @@ a {
             <!-- Card 3 -->
             <div class="card card_3" id="card3">
                 <div class="image"></div>
-                <h2>장소 추리하기</h2>
-                <p>준비물: 핸드폰 카메라
-                    <br>
-
-                    대회지에서 해당 장소를 찾아서 조원들과 함께 사진을 찍는다
-                    <br><br><a>통과조건: 한명도 빠짐없이 사진에 나와야한다(찍는 사람 포함)</a>
-                    <br><a>해당 장소가 식별이 가능한 사진이어야 합니다!!!</a>
+                <h2>가족 선언문 릴레이 암송</h2>
+                <p>             
+                    가족 선언문을 조원들과 부분 부분 나눠서 끝까지 외운다.
+                    <br><br><a>통과 조건: 모든 조원 참가</a>
+                    <br><a>**'영적/사회적' 게임 부스에서 진행되는 게임입니다. 부스를 찾아가세요!</a>
                 </p>
-
                     
                 <div class="prev" onclick="prev()">PREV</div>
                 <div class="next" onclick="next()">NEXT</div>
@@ -297,7 +294,7 @@ a {
             }
         }
 
-        var password = "지식";
+        var password = "좋았더라";
         function QnAnswer(){
             
             if(AnswerInput.value == password){
@@ -308,7 +305,6 @@ a {
             }
 
         }
-        
         var KysaDday = new Date('2022-09-23 15:25:00');
         var today = new Date();
 
